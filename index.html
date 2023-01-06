@@ -7,14 +7,37 @@
     <title>Sliding Puzzle</title>
     <link rel="stylesheet" href="puzzle.css" />
     <script src="puzzle.js"></script>
+    <script src="timer.js"></script>
   </head>
 
   <body>
-    <div id="board"></div>
-    <h1>Turns: <span id="turns">0</span></h1>
+    <h1 class="title">Challenge On!</h1>
+    <h2 id="instruction-header">Instructions</h2>
+    <p class="instructions">
+      Welcome to the 3x3 sliding puzzle challenge! Your task is the puzzle
+      pieces into their correct positions to win. NOTE that you are only allowed
+      to drag and swap tiles that are adjacent to the blank tile. Have fun and
+      good luck! :)
+    </p>
+    <div class="container">
+      <div class="challenge">
+        <div id="board"></div>
+        <h2>Turns: <span id="turns">0</span></h2>
+      </div>
+      <div class="instructions">
+        <div class="solution">
+          <img id="original-img" src="solution.jpg" />
+        </div>
+      </div>
+    </div>
 
-    <audio autoplay loop>
+    <audio id="bg-music" autoplay loop>
       <source src="life.mp3" type="audio/mpeg" />
     </audio>
+
+    <script>
+      var audio = document.getElementById("bg-music");
+      audio.volume = 0.75;
+    </script>
   </body>
 </html>

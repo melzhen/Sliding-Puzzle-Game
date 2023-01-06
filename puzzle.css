@@ -2,11 +2,29 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   color: orange;
+  margin: 200px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
-#title {
-  height: 150px;
-  width: 400px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 100px;
+}
+
+#instruction-header {
+  color: orangered;
+}
+
+.text {
+  width: 700px;
+}
+
+.challenge {
+  margin-top: 50px;
 }
 
 #board {
@@ -24,4 +42,11 @@ body {
   width: 118px;
   height: 118px;
   border: 1px solid orange;
+}
+
+#original-img {
+  width: 370px;
+  height: 370px;
+
+  margin: 0 auto;
 }
