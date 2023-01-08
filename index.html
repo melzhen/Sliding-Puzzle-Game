@@ -7,7 +7,6 @@
     <title>Sliding Puzzle</title>
     <link rel="stylesheet" href="puzzle.css" />
     <script src="puzzle.js"></script>
-    <script src="timer.js"></script>
   </head>
 
   <body>
@@ -20,24 +19,40 @@
       good luck! :)
     </p>
     <div class="container">
-      <div class="challenge">
-        <div id="board"></div>
-        <h2>Turns: <span id="turns">0</span></h2>
-      </div>
-      <div class="instructions">
-        <div class="solution">
-          <img id="original-img" src="solution.jpg" />
+      <div class="game-container">
+        <!-- start screen for game -->
+        <div id="start-screen">
+          <a href="#" onclick="startGame()">Start Game</a>
         </div>
+
+        <div class="challenge">
+          <div id="board"></div>
+        </div>
+      </div>
+
+      <div class="solution">
+        <img id="original-img" src="solution.jpg" />
       </div>
     </div>
 
-    <audio id="bg-music" autoplay loop>
-      <source src="life.mp3" type="audio/mpeg" />
-    </audio>
+    <h2>Turns: <span id="turns">0</span></h2>
 
-    <script>
-      var audio = document.getElementById("bg-music");
-      audio.volume = 0.75;
-    </script>
+    <!-- <audio id="bg-music" controls autoplay loop>
+      <source src="life.mp3" type="audio/mpeg" />
+    </audio> -->
+
+    <audio id="player" src="life.mp3"></audio>
+    <div>
+      <button onclick="document.getElementById('player').play()">
+        <img
+          src="https://img.icons8.com/material-rounded/24/null/medium-volume.png"
+        />
+      </button>
+      <button onclick="document.getElementById('player').pause()">
+        <img src="https://img.icons8.com/material-sharp/24/null/no-audio.png" />
+      </button>
+    </div>
+
+    <script src="audio.js"></script>
   </body>
 </html>

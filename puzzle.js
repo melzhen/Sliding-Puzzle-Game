@@ -84,3 +84,11 @@ function dragEnd() {
     document.getElementById("turns").innerText = turns;
   }
 }
+
+function startGame() {
+  document.getElementById("player").play();
+
+  let start = document.getElementById("start-screen");
+  start.style.display = "none";
+  start();
+}
