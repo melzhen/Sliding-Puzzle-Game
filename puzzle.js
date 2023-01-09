@@ -1,3 +1,8 @@
+//timer
+let time = {min: 2, sec: 0};
+
+
+//game
 var rows = 3;
 var columns = 3;
 
@@ -28,6 +33,7 @@ window.onload = function () {
       document.getElementById("board").append(tile);
     }
   }
+  document.getElementById("timer").innerHTML = time.min + " : " + time.sec;
 };
 
 function dragStart() {
@@ -86,6 +92,23 @@ function dragEnd() {
 }
 
 function startGame() {
+  // update timer
+  let timer = setInterval(function() {
+
+    time.sec = time.sec - 1;
+    if (time.sec == -1) {
+      time.min = time.min - 1;
+      time.sec = 59;
+    }
+
+    if (time.min == -1) {
+      document.getElementById("timer").innerHTML = "TIMESUP";
+      clearInterval(x);
+    } else {
+      document.getElementById("timer").innerHTML = time.min + " : " + time.sec;
+    }
+  }, 1000);
+
   document.getElementById("player").play();
 
   let start = document.getElementById("start-screen");
@@ -93,6 +116,8 @@ function startGame() {
   start();
 }
 
+
+//audio
 function controlAudio() {
   let player = document.getElementById('player');
   let playMusic = document.getElementById('playMusic');
