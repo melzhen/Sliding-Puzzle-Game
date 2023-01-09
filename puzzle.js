@@ -92,3 +92,18 @@ function startGame() {
   start.style.display = "none";
   start();
 }
+
+function controlAudio() {
+  let player = document.getElementById('player');
+  let playMusic = document.getElementById('playMusic');
+  let pauseMusic = document.getElementById('pauseMusic');
+  if (player.paused) {
+    player.play();
+    playMusic.style.display = "none";
+    pauseMusic.style.display = "inline";
+  } else {
+    player.pause();
+    playMusic.style.display = "inline";
+    pauseMusic.style.display = "none";
+  }
+}
