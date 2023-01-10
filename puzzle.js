@@ -1,5 +1,7 @@
 //timer
-let time = {min: 2, sec: 0};
+const MINLIMIT = 0;
+const SECLIMIT = 3;
+let time = {min: MINLIMIT, sec: SECLIMIT};
 
 //game
 var rows = 3;
@@ -29,6 +31,9 @@ function updateTimer() {
 }
 
 window.onload = function () {
+  document.getElementById("start-game").style.display = "inline-block";
+  document.getElementById("end-game").style.display = "none";
+  document.getElementById("restart").style.display = "none";
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns; c++) {
       //<img id="0-0" src="1.jpg">
@@ -116,6 +121,8 @@ function startGame() {
     if (time.min == -1) {
       document.getElementById("timer").innerHTML = "TIME'S UP!";
       clearInterval(timer);
+      endGame();
+      return;
     } else {
       updateTimer();
     }
@@ -126,7 +133,20 @@ function startGame() {
 
   let start = document.getElementById("start-screen");
   start.style.display = "none";
+  document.getElementById("restart").style.display = "inline-block";
   start();
+}
+
+function endGame() {
+  time = {min: MINLIMIT, sec: SECLIMIT};
+  updateTimer();
+  document.getElementById("player").pause();
+  document.getElementById('playMusic').style.display = "none";
+  document.getElementById('pauseMusic').style.display = "none";
+  document.getElementById("start-screen").style.display = "flex";
+  document.getElementById("start-game").style.display = "none";
+  document.getElementById("end-game").style.display = "inline-block";
+  document.getElementById("restart").style.display = "inline-block";
 }
 
 //audio

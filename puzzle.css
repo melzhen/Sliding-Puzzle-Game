@@ -88,7 +88,7 @@ body {
   opacity: 0.8;
 } */
 
-#start-screen a {
+#start-game {
   border: 2px solid #fff;
   color: #fff;
   text-decoration: none;
@@ -100,15 +100,51 @@ body {
   display: inline-block;
 }
 
-#start-screen a:hover {
+#start-game:hover {
   background-color: rgb(241, 193, 104);
   color: #fff;
   font-size: 25px;
   border: 3px solid #fff;
 }
 
-#start-screen a:active {
+#start-game:active {
   background-color: rgb(241, 193, 104);
   color: #fff;
   opacity: 100%;
+}
+
+#end-game {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 25px;
+  border-radius: 15px;
+  cursor: default;
+  width: 150px;
+  display: none;
+}
+
+#restart {
+  border: 2px solid #fff;
+  background-color: orange;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 150px;
+  display: none;
+}
+
+#restart:hover {
+  background-color: rgb(241, 193, 104);
+  color: #fff;
+  font-size: 25px;
+  border: 3px solid #fff;
+}
+
+#restart:active {
+  background-color: orange;
+  color: #fff;
 }
