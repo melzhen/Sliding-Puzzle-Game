@@ -1,7 +1,8 @@
 //timer
-const MINLIMIT = 0;
-const SECLIMIT = 3;
+const MINLIMIT = 2;
+const SECLIMIT = 0;
 let time = {min: MINLIMIT, sec: SECLIMIT};
+let timer = null;
 
 //game
 var rows = 3;
@@ -31,6 +32,8 @@ function updateTimer() {
 }
 
 window.onload = function () {
+  time = {min: MINLIMIT, sec: SECLIMIT};
+  updateTimer();
   document.getElementById("start-game").style.display = "inline-block";
   document.getElementById("end-game").style.display = "none";
   document.getElementById("restart").style.display = "none";
@@ -52,7 +55,6 @@ window.onload = function () {
       document.getElementById("board").append(tile);
     }
   }
-  updateTimer();
 };
 
 function dragStart() {
@@ -107,11 +109,24 @@ function dragEnd() {
 
     turns += 1;
     document.getElementById("turns").innerText = turns;
+
+    if (document.getElementById("board").childNodes[1].src.includes("2.jpg") &&
+      document.getElementById("board").childNodes[2].src.includes("3.jpg") &&
+      document.getElementById("board").childNodes[3].src.includes("4.jpg") &&
+      document.getElementById("board").childNodes[4].src.includes("5.jpg") &&
+      document.getElementById("board").childNodes[5].src.includes("6.jpg") &&
+      document.getElementById("board").childNodes[6].src.includes("7.jpg") &&
+      document.getElementById("board").childNodes[7].src.includes("8.jpg") &&
+      document.getElementById("board").childNodes[8].src.includes("9.jpg")) {
+        document.getElementById("end-game").innerHTML = "You Won";
+        clearInterval(timer);
+        endGame();
+      }
   }
 }
 
 function startGame() {
-  let timer = setInterval(function() {
+  timer = setInterval(function() {
     time.sec = time.sec - 1;
     if (time.sec == -1) {
       time.min = time.min - 1;
@@ -121,6 +136,7 @@ function startGame() {
     if (time.min == -1) {
       document.getElementById("timer").innerHTML = "TIME'S UP!";
       clearInterval(timer);
+      document.getElementById("end-game").innerHTML = "Game Over";
       endGame();
       return;
     } else {
@@ -138,8 +154,6 @@ function startGame() {
 }
 
 function endGame() {
-  time = {min: MINLIMIT, sec: SECLIMIT};
-  updateTimer();
   document.getElementById("player").pause();
   document.getElementById('playMusic').style.display = "none";
   document.getElementById('pauseMusic').style.display = "none";
