@@ -122,6 +122,7 @@ function startGame() {
   }, 1000);
 
   document.getElementById("player").play();
+  pauseMusic.style.display = "inline";
 
   let start = document.getElementById("start-screen");
   start.style.display = "none";
