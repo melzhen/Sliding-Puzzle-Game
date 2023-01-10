@@ -1,7 +1,6 @@
 //timer
 let time = {min: 2, sec: 0};
 
-
 //game
 var rows = 3;
 var columns = 3;
@@ -13,6 +12,21 @@ var turns = 0;
 
 // var imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var imgOrder = ["5", "4", "7", "9", "2", "6", "8", "3", "1"];
+
+function updateTimer() {
+  let displayTime = "";
+  if (time.min < 10) {
+    displayTime = "0" + time.min + " : ";
+  } else {
+    displayTime = time.min + " : ";
+  }
+  if (time.sec < 10) {
+    displayTime = displayTime + "0" + time.sec;
+  } else {
+    displayTime = displayTime + time.sec;
+  }
+  document.getElementById("timer").innerHTML = displayTime;
+}
 
 window.onload = function () {
   for (let r = 0; r < rows; r++) {
@@ -33,7 +47,7 @@ window.onload = function () {
       document.getElementById("board").append(tile);
     }
   }
-  document.getElementById("timer").innerHTML = time.min + " : " + time.sec;
+  updateTimer();
 };
 
 function dragStart() {
@@ -92,9 +106,7 @@ function dragEnd() {
 }
 
 function startGame() {
-  // update timer
   let timer = setInterval(function() {
-
     time.sec = time.sec - 1;
     if (time.sec == -1) {
       time.min = time.min - 1;
@@ -102,10 +114,10 @@ function startGame() {
     }
 
     if (time.min == -1) {
-      document.getElementById("timer").innerHTML = "TIMESUP";
-      clearInterval(x);
+      document.getElementById("timer").innerHTML = "TIME'S UP!";
+      clearInterval(timer);
     } else {
-      document.getElementById("timer").innerHTML = time.min + " : " + time.sec;
+      updateTimer();
     }
   }, 1000);
 
@@ -115,7 +127,6 @@ function startGame() {
   start.style.display = "none";
   start();
 }
-
 
 //audio
 function controlAudio() {
