@@ -35,8 +35,10 @@ window.onload = function () {
   time = {min: MINLIMIT, sec: SECLIMIT};
   updateTimer();
   document.getElementById("start-game").style.display = "inline-block";
+  document.getElementById("continue").style.display = "none";
   document.getElementById("end-game").style.display = "none";
   document.getElementById("restart").style.display = "none";
+  document.getElementById("pause").style.display = "none";
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns; c++) {
       //<img id="0-0" src="1.jpg">
@@ -149,7 +151,9 @@ function startGame() {
 
   let start = document.getElementById("start-screen");
   start.style.display = "none";
+  document.getElementById("start-game").style.display = "none";
   document.getElementById("restart").style.display = "inline-block";
+  document.getElementById("pause").style.display = "inline-block";
   start();
 }
 
@@ -158,9 +162,38 @@ function endGame() {
   document.getElementById('playMusic').style.display = "none";
   document.getElementById('pauseMusic').style.display = "none";
   document.getElementById("start-screen").style.display = "flex";
-  document.getElementById("start-game").style.display = "none";
   document.getElementById("end-game").style.display = "inline-block";
-  document.getElementById("restart").style.display = "inline-block";
+  document.getElementById("pause").style.display = "none";
+}
+
+function pauseGame() {
+  clearInterval(timer);
+  document.getElementById("pause").style.display = "none";
+  document.getElementById("start-screen").style.display = "flex";
+  document.getElementById("continue").style.display = "inline-block";
+}
+
+function continueGame() {
+  timer = setInterval(function() {
+    time.sec = time.sec - 1;
+    if (time.sec == -1) {
+      time.min = time.min - 1;
+      time.sec = 59;
+    }
+
+    if (time.min == -1) {
+      document.getElementById("timer").innerHTML = "TIME'S UP!";
+      clearInterval(timer);
+      document.getElementById("end-game").innerHTML = "Game Over";
+      endGame();
+      return;
+    } else {
+      updateTimer();
+    }
+  }, 1000);
+  document.getElementById("continue").style.display = "none";
+  document.getElementById("start-screen").style.display = "none";
+  document.getElementById("pause").style.display = "inline-block";
 }
 
 //audio

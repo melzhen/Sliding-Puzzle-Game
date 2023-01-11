@@ -134,7 +134,7 @@ b {
   opacity: 0.8;
 } */
 
-#start-game {
+.button-inside {
   border: 2px solid #fff;
   color: #fff;
   text-decoration: none;
@@ -146,20 +146,20 @@ b {
   display: inline-block;
 }
 
-#start-game:hover {
+.button-inside:hover {
   background-color: rgb(241, 193, 104);
   color: #fff;
   font-size: 25px;
   border: 3px solid #fff;
 }
 
-#start-game:active {
+.button-inside:active {
   background-color: rgb(241, 193, 104);
   color: #fff;
   opacity: 100%;
 }
 
-#end-game {
+.text-inside {
   color: #fff;
   text-decoration: none;
   padding: 10px 0;
@@ -170,7 +170,7 @@ b {
   display: none;
 }
 
-#restart {
+.button-outside {
   border: 2px solid #fff;
   background-color: orange;
   color: #fff;
@@ -183,14 +183,14 @@ b {
   display: none;
 }
 
-#restart:hover {
+.button-outside:hover {
   background-color: rgb(241, 193, 104);
   color: #fff;
   font-size: 25px;
   border: 3px solid #fff;
 }
 
-#restart:active {
+.button-outside:active {
   background-color: orange;
   color: #fff;
 }

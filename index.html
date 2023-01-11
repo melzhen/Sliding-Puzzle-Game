@@ -25,8 +25,9 @@
       <div class="game-container">
         <!-- start screen for game -->
         <div id="start-screen">
-          <a href="#" onclick="startGame()" id="start-game">Start Game</a>
-          <p id="end-game"></p>
+          <p onclick="startGame()" id="start-game" class="button-inside">Start Game</p>
+          <p onclick="continueGame()" id="continue" class="button-inside">Continue</p>
+          <p id="end-game" class="text-inside"></p>
         </div>
 
         <div class="challenge">
@@ -41,7 +42,11 @@
 
     <h2>Turns: <span id="turns">0</span></h2>
     <h2 id="timer"></h2>
-    <p onclick="window.location.reload()" id="restart">Restart</p>
+    <div>
+
+    </div>
+    <p onclick="window.location.reload()" id="restart" class="button-outside">Restart</p>
+    <p onclick="pauseGame()" id="pause" class="button-outside">Pause</p>
 
     <!-- <audio id="bg-music" controls autoplay loop>
       <source src="life.mp3" type="audio/mpeg" />
