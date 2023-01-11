@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sliding Puzzle</title>
     <link rel="stylesheet" href="puzzle.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/sxv7jik.css" />
     <script src="puzzle.js"></script>
   </head>
 
   <body>
-    <h1 class="title">Challenge Time!</h1>
-    <h2 id="instruction-header">Instructions</h2>
-    <p class="instructions">
-      Welcome to the 3x3 sliding puzzle challenge! Your task is the puzzle
-      pieces into their correct positions to win. NOTE that you are only allowed
-      to drag and swap tiles that are adjacent to the blank tile. Have fun and
-      good luck! :)
-    </p>
+    <h1 class="challenge-title">Challenge Time!</h1>
+    <div class="text-box">
+      <h2 id="instruction-header">Instructions</h2>
+      <p class="instructions">
+        Welcome to the 3x3 sliding puzzle challenge! Your task is to place the
+        puzzle pieces into their correct positions in under <b>TWO</b> minutes
+        to win. <b>NOTE</b> that you are only allowed to drag and swap tiles
+        that are adjacent to the blank tile. Have fun and good luck! :)
+      </p>
+    </div>
     <div class="container">
       <div class="game-container">
         <!-- start screen for game -->
@@ -48,7 +51,9 @@
 
     <div>
       <button id="playMusic" onclick="controlAudio()" hidden>
-        <img src="https://img.icons8.com/material-rounded/24/null/medium-volume.png" />
+        <img
+          src="https://img.icons8.com/material-rounded/24/null/medium-volume.png"
+        />
       </button>
       <button id="pauseMusic" onclick="controlAudio()" hidden>
         <img src="https://img.icons8.com/material-sharp/24/null/no-audio.png" />
