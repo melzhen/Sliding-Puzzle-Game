@@ -44,7 +44,7 @@ window.onload = function () {
       //<img id="0-0" src="1.jpg">
       let tile = document.createElement("img");
       tile.id = r.toString() + "-" + c.toString();
-      tile.src = imgOrder.shift() + ".jpg";
+      tile.src = "Images/" + imgOrder.shift() + ".jpg";
 
       //DRAG FUNCTIONALITY
       tile.addEventListener("dragstart", dragStart); //click an image to drag
@@ -79,7 +79,7 @@ function dragDrop() {
 
 function dragEnd() {
   // if other tile is not the blank tile, do not do anything
-  if (!otherTile.src.includes("1.jpg")) {
+  if (!otherTile.src.includes("Images/1.jpg")) {
     return;
   }
 
@@ -106,22 +106,22 @@ function dragEnd() {
     currTile.src = otherImg;
     otherTile.src = currImg;
 
-    new Audio("slide.mp3").play();
+    new Audio("Audio/slide.mp3").play();
 
     turns += 1;
     document.getElementById("turns").innerText = turns;
 
     if (
-      document.getElementById("board").childNodes[1].src.includes("2.jpg") &&
-      document.getElementById("board").childNodes[2].src.includes("3.jpg") &&
-      document.getElementById("board").childNodes[3].src.includes("4.jpg") &&
-      document.getElementById("board").childNodes[4].src.includes("5.jpg") &&
-      document.getElementById("board").childNodes[5].src.includes("6.jpg") &&
-      document.getElementById("board").childNodes[6].src.includes("7.jpg") &&
-      document.getElementById("board").childNodes[7].src.includes("8.jpg") &&
-      document.getElementById("board").childNodes[8].src.includes("9.jpg")
+      document.getElementById("board").childNodes[1].src.includes("Images/2.jpg") &&
+      document.getElementById("board").childNodes[2].src.includes("Images/3.jpg") &&
+      document.getElementById("board").childNodes[3].src.includes("Images/4.jpg") &&
+      document.getElementById("board").childNodes[4].src.includes("Images/5.jpg") &&
+      document.getElementById("board").childNodes[5].src.includes("Images/6.jpg") &&
+      document.getElementById("board").childNodes[6].src.includes("Images/7.jpg") &&
+      document.getElementById("board").childNodes[7].src.includes("Images/8.jpg") &&
+      document.getElementById("board").childNodes[8].src.includes("Images/9.jpg")
     ) {
-      new Audio("win.wav").play();
+      new Audio("Audio/win.wav").play();
       document.getElementById("end-game").innerHTML = "Congrats! You Won!";
       clearInterval(timer);
       endGame();
@@ -130,7 +130,7 @@ function dragEnd() {
 }
 
 function startGame() {
-  new Audio("start-game.wav").play();
+  new Audio("Audio/start-game.wav").play();
 
   timer = setInterval(function () {
     time.sec = time.sec - 1;
@@ -140,7 +140,7 @@ function startGame() {
     }
 
     if (time.min == -1) {
-      new Audio("game-over.wav").play();
+      new Audio("Audio/game-over.wav").play();
       document.getElementById("timer").innerHTML = "TIME'S UP!";
       clearInterval(timer);
       document.getElementById("end-game").innerHTML = "Game Over";
@@ -172,7 +172,7 @@ function endGame() {
 }
 
 function pauseGame() {
-  new Audio("select-button.wav").play();
+  new Audio("Audio/select-button.wav").play();
   clearInterval(timer);
   document.getElementById("pause").style.display = "none";
   document.getElementById("start-screen").style.display = "flex";
@@ -180,7 +180,7 @@ function pauseGame() {
 }
 
 function continueGame() {
-  new Audio("select-button.wav").play();
+  new Audio("Audio/select-button.wav").play();
   // new Audio("start-game.wav").play();
   timer = setInterval(function () {
     time.sec = time.sec - 1;
@@ -190,7 +190,7 @@ function continueGame() {
     }
 
     if (time.min == -1) {
-      new Audio("game-over.wav").play();
+      new Audio("Audio/game-over.wav").play();
       document.getElementById("timer").innerHTML = "TIME'S UP!";
       clearInterval(timer);
       document.getElementById("end-game").innerHTML = "Game Over";
