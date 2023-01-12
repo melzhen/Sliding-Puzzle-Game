@@ -140,6 +140,7 @@ function startGame() {
     }
 
     if (time.min == -1) {
+      new Audio("game-over.wav").play();
       document.getElementById("timer").innerHTML = "TIME'S UP!";
       clearInterval(timer);
       document.getElementById("end-game").innerHTML = "Game Over";
