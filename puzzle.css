@@ -14,8 +14,8 @@ body {
   text-align: center;
   color: orange;
   /* margin: 200px;
-  margin-bottom: 50px;
   margin-top: 50px; */
+  margin-bottom: 25px;
 }
 
 .challenge-title {
@@ -24,7 +24,7 @@ body {
   font-style: normal;
   font-size: 100px;
 
-  text-shadow: 4px 3px 0px rgb(255, 106, 106), 9px 8px 0px rgb(216, 216, 216);
+  text-shadow: 4px 3px 0px orangered, 9px 8px 0px rgb(216, 216, 216);
   /* -webkit-text-stroke: 2px orangered; */
 
   margin-bottom: 5px;
@@ -36,14 +36,11 @@ b {
 }
 
 .text-box {
-  background-color: orange;
-  opacity: 0.8;
+  background-color: rgb(255, 175, 28);
 
   padding: 10px;
   border: 5px solid orangered;
-
   color: rgb(255, 255, 255);
-
   margin: 0 200px;
 }
 
@@ -54,6 +51,7 @@ b {
 
   gap: 100px;
   padding: 20px;
+  padding-top: 0;
 }
 
 #instruction-header {
@@ -170,27 +168,57 @@ b {
   display: none;
 }
 
+.vol {
+  font-size: 15px;
+}
+
 .button-outside {
-  border: 2px solid #fff;
-  background-color: orange;
-  color: #fff;
+  border-style: none;
+  background-color: rgb(255, 255, 255);
+  color: orange;
   text-decoration: none;
   padding: 10px 0;
   font-size: 20px;
-  border-radius: 15px;
+  border-radius: 100px;
   cursor: pointer;
   width: 150px;
   display: none;
 }
 
 .button-outside:hover {
-  background-color: rgb(241, 193, 104);
+  background-color: orange;
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   border: 3px solid #fff;
 }
 
-.button-outside:active {
+/* .button-outside:active {
   background-color: orange;
   color: #fff;
+} */
+
+.control-buttons {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#timer {
+  border: 3px solid orangered;
+  border-radius: 25px;
+  color: orangered;
+
+  margin: 0 620px;
+  margin-top: 20px;
+  padding: 10px;
+
+  font-size: 30px;
+}
+
+.moves {
+  font-size: 30px;
+  margin-bottom: 15px;
 }

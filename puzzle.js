@@ -1,7 +1,7 @@
 //timer
 const MINLIMIT = 2;
 const SECLIMIT = 0;
-let time = {min: MINLIMIT, sec: SECLIMIT};
+let time = { min: MINLIMIT, sec: SECLIMIT };
 let timer = null;
 
 //game
@@ -32,7 +32,7 @@ function updateTimer() {
 }
 
 window.onload = function () {
-  time = {min: MINLIMIT, sec: SECLIMIT};
+  time = { min: MINLIMIT, sec: SECLIMIT };
   updateTimer();
   document.getElementById("start-game").style.display = "inline-block";
   document.getElementById("continue").style.display = "none";
@@ -112,23 +112,25 @@ function dragEnd() {
     turns += 1;
     document.getElementById("turns").innerText = turns;
 
-    if (document.getElementById("board").childNodes[1].src.includes("2.jpg") &&
+    if (
+      document.getElementById("board").childNodes[1].src.includes("2.jpg") &&
       document.getElementById("board").childNodes[2].src.includes("3.jpg") &&
       document.getElementById("board").childNodes[3].src.includes("4.jpg") &&
       document.getElementById("board").childNodes[4].src.includes("5.jpg") &&
       document.getElementById("board").childNodes[5].src.includes("6.jpg") &&
       document.getElementById("board").childNodes[6].src.includes("7.jpg") &&
       document.getElementById("board").childNodes[7].src.includes("8.jpg") &&
-      document.getElementById("board").childNodes[8].src.includes("9.jpg")) {
-        document.getElementById("end-game").innerHTML = "You Won";
-        clearInterval(timer);
-        endGame();
-      }
+      document.getElementById("board").childNodes[8].src.includes("9.jpg")
+    ) {
+      document.getElementById("end-game").innerHTML = "Congrats! You Won!";
+      clearInterval(timer);
+      endGame();
+    }
   }
 }
 
 function startGame() {
-  timer = setInterval(function() {
+  timer = setInterval(function () {
     time.sec = time.sec - 1;
     if (time.sec == -1) {
       time.min = time.min - 1;
@@ -159,8 +161,8 @@ function startGame() {
 
 function endGame() {
   document.getElementById("player").pause();
-  document.getElementById('playMusic').style.display = "none";
-  document.getElementById('pauseMusic').style.display = "none";
+  document.getElementById("playMusic").style.display = "none";
+  document.getElementById("pauseMusic").style.display = "none";
   document.getElementById("start-screen").style.display = "flex";
   document.getElementById("end-game").style.display = "inline-block";
   document.getElementById("pause").style.display = "none";
@@ -174,7 +176,7 @@ function pauseGame() {
 }
 
 function continueGame() {
-  timer = setInterval(function() {
+  timer = setInterval(function () {
     time.sec = time.sec - 1;
     if (time.sec == -1) {
       time.min = time.min - 1;
@@ -198,9 +200,9 @@ function continueGame() {
 
 //audio
 function controlAudio() {
-  let player = document.getElementById('player');
-  let playMusic = document.getElementById('playMusic');
-  let pauseMusic = document.getElementById('pauseMusic');
+  let player = document.getElementById("player");
+  let playMusic = document.getElementById("playMusic");
+  let pauseMusic = document.getElementById("pauseMusic");
   if (player.paused) {
     player.play();
     playMusic.style.display = "none";

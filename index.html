@@ -7,6 +7,16 @@
     <title>Sliding Puzzle</title>
     <link rel="stylesheet" href="puzzle.css" />
     <link rel="stylesheet" href="https://use.typekit.net/sxv7jik.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
     <script src="puzzle.js"></script>
   </head>
 
@@ -21,12 +31,17 @@
         that are adjacent to the blank tile. Have fun and good luck! :)
       </p>
     </div>
+    <h2 id="timer"></h2>
     <div class="container">
       <div class="game-container">
         <!-- start screen for game -->
         <div id="start-screen">
-          <p onclick="startGame()" id="start-game" class="button-inside">Start Game</p>
-          <p onclick="continueGame()" id="continue" class="button-inside">Continue</p>
+          <p onclick="startGame()" id="start-game" class="button-inside">
+            Start Game
+          </p>
+          <p onclick="continueGame()" id="continue" class="button-inside">
+            Continue
+          </p>
           <p id="end-game" class="text-inside"></p>
         </div>
 
@@ -40,31 +55,45 @@
       </div>
     </div>
 
-    <h2>Turns: <span id="turns">0</span></h2>
-    <h2 id="timer"></h2>
-    <div>
-
-    </div>
-    <p onclick="window.location.reload()" id="restart" class="button-outside">Restart</p>
-    <p onclick="pauseGame()" id="pause" class="button-outside">Pause</p>
-
-    <!-- <audio id="bg-music" controls autoplay loop>
-      <source src="life.mp3" type="audio/mpeg" />
-    </audio> -->
-
-    <audio id="player" src="life.mp3"></audio>
-
-    <div>
-      <button id="playMusic" onclick="controlAudio()" hidden>
-        <img
-          src="https://img.icons8.com/material-rounded/24/null/medium-volume.png"
-        />
-      </button>
-      <button id="pauseMusic" onclick="controlAudio()" hidden>
-        <img src="https://img.icons8.com/material-sharp/24/null/no-audio.png" />
-      </button>
-    </div>
+    <h2 class="moves">Moves: <span id="turns">0</span></h2>
 
     <script src="audio.js"></script>
+
+    <!-- control buttoms for audio, retry, and pause -->
+    <div class="control-buttons">
+      <button
+        onclick="window.location.reload()"
+        id="restart"
+        class="button-outside fa fa-refresh"
+      >
+        <p>Retry</p>
+      </button>
+      <button
+        onclick="pauseGame()"
+        id="pause"
+        class="button-outside fa fa-pause"
+      >
+        <p>Pause Game</p>
+      </button>
+
+      <audio id="player" src="life.mp3"></audio>
+
+      <div>
+        <button id="playMusic" class="button-outside" onclick="controlAudio()">
+          <i class="fa fa-volume-mute" aria-hidden="true"></i>
+          <!-- <img
+            src="https://img.icons8.com/material-rounded/24/null/medium-volume.png"
+          /> -->
+          <p class="vol">Unmute</p>
+        </button>
+        <button id="pauseMusic" class="button-outside" onclick="controlAudio()">
+          <i class="fa fa-volume-up" aria-hidden="true"></i>
+          <!-- <img
+            src="https://img.icons8.com/material-sharp/24/null/no-audio.png"
+          /> -->
+          <p class="vol">Mute</p>
+        </button>
+      </div>
+    </div>
   </body>
 </html>
