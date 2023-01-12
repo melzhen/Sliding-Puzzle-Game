@@ -106,8 +106,7 @@ function dragEnd() {
     currTile.src = otherImg;
     otherTile.src = currImg;
 
-    let mySound = new Audio("slide.mp3");
-    mySound.play();
+    new Audio("slide.mp3").play();
 
     turns += 1;
     document.getElementById("turns").innerText = turns;
@@ -130,6 +129,8 @@ function dragEnd() {
 }
 
 function startGame() {
+  new Audio("start-game.wav").play();
+
   timer = setInterval(function () {
     time.sec = time.sec - 1;
     if (time.sec == -1) {
@@ -169,6 +170,7 @@ function endGame() {
 }
 
 function pauseGame() {
+  new Audio("select-button.wav").play();
   clearInterval(timer);
   document.getElementById("pause").style.display = "none";
   document.getElementById("start-screen").style.display = "flex";
@@ -176,6 +178,8 @@ function pauseGame() {
 }
 
 function continueGame() {
+  new Audio("select.wav").play();
+  new Audio("start-game.wav").play();
   timer = setInterval(function () {
     time.sec = time.sec - 1;
     if (time.sec == -1) {
@@ -184,6 +188,7 @@ function continueGame() {
     }
 
     if (time.min == -1) {
+      new Audio("game-over.wav").play();
       document.getElementById("timer").innerHTML = "TIME'S UP!";
       clearInterval(timer);
       document.getElementById("end-game").innerHTML = "Game Over";
