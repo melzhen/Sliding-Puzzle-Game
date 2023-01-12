@@ -180,8 +180,8 @@ function pauseGame() {
 }
 
 function continueGame() {
-  new Audio("select.wav").play();
-  new Audio("start-game.wav").play();
+  new Audio("select-button.wav").play();
+  // new Audio("start-game.wav").play();
   timer = setInterval(function () {
     time.sec = time.sec - 1;
     if (time.sec == -1) {
