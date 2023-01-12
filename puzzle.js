@@ -121,6 +121,7 @@ function dragEnd() {
       document.getElementById("board").childNodes[7].src.includes("8.jpg") &&
       document.getElementById("board").childNodes[8].src.includes("9.jpg")
     ) {
+      new Audio("win.wav").play();
       document.getElementById("end-game").innerHTML = "Congrats! You Won!";
       clearInterval(timer);
       endGame();
