@@ -112,14 +112,30 @@ function dragEnd() {
     document.getElementById("turns").innerText = turns;
 
     if (
-      document.getElementById("board").childNodes[1].src.includes("Images/2.jpg") &&
-      document.getElementById("board").childNodes[2].src.includes("Images/3.jpg") &&
-      document.getElementById("board").childNodes[3].src.includes("Images/4.jpg") &&
-      document.getElementById("board").childNodes[4].src.includes("Images/5.jpg") &&
-      document.getElementById("board").childNodes[5].src.includes("Images/6.jpg") &&
-      document.getElementById("board").childNodes[6].src.includes("Images/7.jpg") &&
-      document.getElementById("board").childNodes[7].src.includes("Images/8.jpg") &&
-      document.getElementById("board").childNodes[8].src.includes("Images/9.jpg")
+      document
+        .getElementById("board")
+        .childNodes[1].src.includes("Images/2.jpg") &&
+      document
+        .getElementById("board")
+        .childNodes[2].src.includes("Images/3.jpg") &&
+      document
+        .getElementById("board")
+        .childNodes[3].src.includes("Images/4.jpg") &&
+      document
+        .getElementById("board")
+        .childNodes[4].src.includes("Images/5.jpg") &&
+      document
+        .getElementById("board")
+        .childNodes[5].src.includes("Images/6.jpg") &&
+      document
+        .getElementById("board")
+        .childNodes[6].src.includes("Images/7.jpg") &&
+      document
+        .getElementById("board")
+        .childNodes[7].src.includes("Images/8.jpg") &&
+      document
+        .getElementById("board")
+        .childNodes[8].src.includes("Images/9.jpg")
     ) {
       new Audio("Audio/win.wav").play();
       document.getElementById("end-game").innerHTML = "Congrats! You Won!";
@@ -143,7 +159,7 @@ function startGame() {
       new Audio("Audio/game-over.wav").play();
       document.getElementById("timer").innerHTML = "TIME'S UP!";
       clearInterval(timer);
-      document.getElementById("end-game").innerHTML = "Game Over";
+      document.getElementById("end-game").innerHTML = "Game Over!";
       endGame();
       return;
     } else {
