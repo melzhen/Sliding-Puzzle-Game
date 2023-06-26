@@ -1,6 +1,7 @@
 # Sliding-Puzzle-Game
 Sliding puzzle mini game
 
+Artwork was given permission to use by artist. <br />
 Artwork credit: Iris Xie 
 
 Music credit: life by Roa | https://soundcloud.com/roa_music1031/
