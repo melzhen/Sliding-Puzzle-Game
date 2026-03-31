@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "interstate", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+  /* background-color: rgb(30, 30, 30); */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: orange;
+  /* margin: 200px;
+  margin-top: 50px; */
+  margin-bottom: 25px;
+}
+
+.challenge-title {
+  font-family: "chaloops", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 100px;
+
+  text-shadow: 4px 3px 0px orangered, 9px 8px 0px rgb(216, 216, 216);
+  /* -webkit-text-stroke: 2px orangered; */
+
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+b {
+  color: orangered;
+}
+
+.text-box {
+  background-color: rgb(255, 175, 28);
+
+  padding: 10px;
+  border: 5px solid orangered;
+  color: rgb(255, 255, 255);
+  margin: 0 200px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 100px;
+  padding: 20px;
+  padding-top: 0;
+}
+
+#instruction-header {
+  /* font-family: "chaloops", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 25px; */
+
+  color: red;
+}
+
+.text {
+  width: 700px;
+}
+
+.challenge {
+  margin-top: 50px;
+}
+
+.game-container {
+  width: 360px;
+  height: 360px;
+  position: relative;
+}
+
+#start-screen,
+#board {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#start-screen {
+  z-index: 9;
+}
+
+#board {
+  width: 360px;
+  height: 360px;
+  background-color: orangered;
+  border: 10px solid orangered;
+
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#board img {
+  width: 118px;
+  height: 118px;
+  border: 1px solid orange;
+}
+
+#original-img {
+  width: 380px;
+  height: 380px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+#start-screen {
+  width: 340px;
+  height: 340px;
+  background-color: orange;
+
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0.9;
+}
+
+/* #start-screen:hover {
+  opacity: 0.8;
+} */
+
+.button-inside {
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 150px;
+  display: inline-block;
+}
+
+.button-inside:hover {
+  background-color: rgb(241, 193, 104);
+  color: #fff;
+  font-size: 25px;
+  border: 3px solid #fff;
+}
+
+.button-inside:active {
+  background-color: rgb(241, 193, 104);
+  color: #fff;
+  opacity: 100%;
+}
+
+.text-inside {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 25px;
+  border-radius: 15px;
+  cursor: default;
+  width: 150px;
+  display: none;
+}
+
+/* .vol {
+  font-size: 15px;
+} */
+
+.button-outside {
+  border-style: none;
+  background-color: rgb(255, 255, 255);
+  color: orange;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  width: 150px;
+  display: none;
+}
+
+.button-outside:hover {
+  background-color: orange;
+  color: #fff;
+  font-size: 20px;
+  border: 3px solid #fff;
+}
+
+/* .button-outside:active {
+  background-color: orange;
+  color: #fff;
+} */
+
+.control-buttons {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#timer {
+  border: 3px solid orangered;
+  border-radius: 25px;
+  color: orangered;
+
+  margin: 0 600px;
+  margin-top: 20px;
+  padding: 10px;
+
+  font-size: 30px;
+}
+
+.moves {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+#end-game {
+  border: 3px solid;
+}
