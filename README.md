@@ -2,7 +2,7 @@
 Sliding puzzle mini game
 
 Artwork was given permission to use by artist. <br />
-Artwork credit: Iris Xie 
+Artwork credit: Iris Xie | https://irisxie.com/
 
 Music credit: <br />
 life by Roa | https://soundcloud.com/roa_music1031/
